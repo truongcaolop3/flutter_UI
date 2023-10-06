@@ -8,7 +8,7 @@ class Myclassroom extends StatelessWidget {
 
   var mybox = Container();
   List<String> Nametag = [
-    "Java nâng cao",
+    "Java nâng cao 6",
     "Java nâng cao 1 ",
     "Java nâng cao 2",
     "Java nâng cao 3",
@@ -32,12 +32,12 @@ class Myclassroom extends StatelessWidget {
     Color.fromARGB(255, 216, 35, 35),
   ];
   var imageList = [
-    "assets/image/4.jpg",
-    "assets/image/1.jpg",
-    "assets/image/1.jpg",
-    "assets/image/4.jpg",
-    "assets/image/1.jpg",
-    "assets/image/4.jpg",
+    "assets/image/1.png",
+    "assets/image/1.png",
+    "assets/image/3.png",
+    "assets/image/3.png",
+    "assets/image/1.png",
+    "assets/image/1.png",
   ];
   var boxstatus = Container(
     width: 500,
@@ -138,34 +138,45 @@ class Myclassroom extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           color: colorList[index]),
                       padding: EdgeInsets.all(10.0),
-                      // margin: EdgeInsets.only(
-                      //     top: 5, bottom: 5, left: 10, right: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         // crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           // boxstatus,
                           Container(
-                            // clipBehavior: Clip.none,
-                            // margin: EdgeInsets.only(
-                            //     top: 5, bottom: 5, left: 10, right: 10),
-                            // padding: EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: Image.asset("assets/image/4.jpg"),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(Nametag[index],
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 22,
-                                    )),
+                                RichText(
+                                  text: TextSpan(
+                                    children: <InlineSpan>[
+                                      TextSpan(
+                                        text: Nametag[index], // Your long text
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      WidgetSpan(
+                                        alignment: PlaceholderAlignment.middle,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 30.0),
+                                          child: Image.asset(
+                                            imageList[index],
+                                            width: 120,
+                                            height: 80,
+                                            fit: BoxFit.fitWidth,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 SizedBox(
-                                  height: 52.0,
+                                  height: 10,
                                 ),
                                 Text(Name[index],
                                     style: TextStyle(
