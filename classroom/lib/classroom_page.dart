@@ -8,20 +8,26 @@ class Myclassroom extends StatelessWidget {
 
   var mybox = Container();
   List<String> Nametag = [
-    "Java nâng cao 6",
-    "Java nâng cao 1 ",
-    "Java nâng cao 2",
-    "Java nâng cao 3",
-    "Java nâng cao 4",
-    "Java nâng cao 5",
+    "QTDAPM Gr3-2023",
+    "Java nâng cao Nhóm_ 1",
+    "Nhập môn trí tuệ",
+    "Phép tính vi phân",
+    "Giáo dục môi trường",
+    "Chủ nghĩa xã hội",
+    "Cấu trúc dữ liệu",
+    "Nguyên lý hệ điều hành",
+    "Anh văn chuyên ngành",
   ];
   List<String> Name = [
+    "Hân Nguyễn Mậu",
     "Hà Nguyễn Hoàng",
-    "Hà Nguyễn Hoàng 1 ",
-    "Hà Nguyễn Hoàng 2",
-    "Hà Nguyễn Hoàng 3",
-    "Hà Nguyễn Hoàng 4",
-    "Hà Nguyễn Hoàng 5",
+    "Phước Đoàn Thị Hồng",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
+    "[2021-2022.hk2] Phòng ĐTĐH&CTSV",
   ];
   List<Color> colorList = [
     Color.fromARGB(255, 231, 41, 41),
@@ -30,12 +36,18 @@ class Myclassroom extends StatelessWidget {
     Color.fromARGB(255, 35, 113, 231),
     Color.fromARGB(255, 216, 35, 207),
     Color.fromARGB(255, 216, 35, 35),
+    Color.fromARGB(255, 231, 41, 41),
+    Color.fromARGB(255, 238, 218, 43),
+    Color.fromARGB(255, 55, 235, 39),
   ];
   var imageList = [
     "assets/image/1.png",
     "assets/image/1.png",
-    "assets/image/3.png",
-    "assets/image/3.png",
+    "assets/image/1.png",
+    "assets/image/1.png",
+    "assets/image/1.png",
+    "assets/image/1.png",
+    "assets/image/1.png",
     "assets/image/1.png",
     "assets/image/1.png",
   ];
@@ -91,19 +103,22 @@ class Myclassroom extends StatelessWidget {
             bottom: BorderSide(
                 color: Color.fromARGB(255, 212, 211, 211), width: 1)),
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black,
-          size: 28,
-        ),
+        iconTheme: const IconThemeData(color: Colors.black54),
         title: Text(
           "Google Lớp học",
           style: TextStyle(color: Colors.black, fontSize: 20),
         ),
         actions: [
-          CircleAvatar(
-            radius: 30.0,
-            backgroundImage: AssetImage('assets/image/4.jpg'),
+          ClipOval(
+            child: CircleAvatar(
+              radius: 20.0,
+              backgroundColor:
+                  Colors.transparent, // Set a background color if needed
+              child: Image.asset(
+                'assets/image/4.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Center(
             child: Theme(
@@ -160,23 +175,24 @@ class Myclassroom extends StatelessWidget {
                                         ),
                                       ),
                                       WidgetSpan(
-                                        alignment: PlaceholderAlignment.middle,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 30.0),
+                                        alignment: PlaceholderAlignment.top,
+                                        // child: Padding(
+                                        // padding: const EdgeInsets.only(
+                                        //     right: 30.0),
+                                        child: Opacity(
+                                          opacity:
+                                              0.6, // Điều chỉnh độ mờ của hình ảnh ở đây
                                           child: Image.asset(
                                             imageList[index],
-                                            width: 120,
-                                            height: 80,
+                                            width: 80,
+                                            height: 70,
                                             fit: BoxFit.fitWidth,
                                           ),
                                         ),
                                       ),
+                                      // ),
                                     ],
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
                                 ),
                                 Text(Name[index],
                                     style: TextStyle(
@@ -199,7 +215,7 @@ class Myclassroom extends StatelessWidget {
                                     color: Colors.black,
                                   ),
                                 ),
-                                backgroundColor: Colors.white70,
+                                backgroundColor: Colors.white,
                               );
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(snackBar);
@@ -212,6 +228,411 @@ class Myclassroom extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      drawer: new Drawer(
+        child: new ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            SizedBox(
+              height: 100,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.black26, // Choose your desired border color
+                      width: 1.0, // Adjust the border width as needed
+                    ),
+                  ),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(fontSize: 22, color: Colors.black),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "G",
+                            style: TextStyle(fontSize: 22, color: Colors.blue),
+                          ),
+                          TextSpan(
+                            text: "o",
+                            style: TextStyle(fontSize: 22, color: Colors.red),
+                          ),
+                          TextSpan(
+                            text: "o",
+                            style:
+                                TextStyle(fontSize: 22, color: Colors.yellow),
+                          ),
+                          TextSpan(
+                            text: "g",
+                            style: TextStyle(fontSize: 22, color: Colors.blue),
+                          ),
+                          TextSpan(
+                            text: "l",
+                            style: TextStyle(fontSize: 22, color: Colors.green),
+                          ),
+                          TextSpan(
+                            text: "e",
+                            style: TextStyle(fontSize: 22, color: Colors.red),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      " Lớp học",
+                      style: TextStyle(fontSize: 20, color: Colors.black54),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.black26, // Choose your desired border color
+                    width: 1.0, // Adjust the border width as needed
+                  ),
+                ),
+              ),
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: const Icon(Icons.home_outlined),
+                    title: const Text('Lớp Học'),
+                    selected: true,
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 1
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.calendar_today),
+                    title: const Text('Lịch'),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.notifications_none_outlined),
+                    title: const Text('Thông báo'),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 16, left: 16),
+                    child: Text(
+                      "Đã đăng ký",
+                      style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.fact_check_outlined),
+                    title: const Text('Việc cần làm'),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/cam.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('QTDAPM Gr3-2023'),
+                        // Text(
+                        //   '2020 - 2023',
+                        //   style: TextStyle(fontSize: 12, color: Colors.black54),
+                        // ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh1.png"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Java nâng cao_Nhóm 1'),
+                        // Text(
+                        //   '2020 - 2023',
+                        //   style: TextStyle(fontSize: 12, color: Colors.black54),
+                        // ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh2.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2022-2023.1] Nhập môn Trí ...'),
+                        Text(
+                          '2022-2023.1.TIN3113.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh3.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2022-2023.2] - Giáo dục mô ...'),
+                        Text(
+                          '2021-2022.2.MTR1022.002',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh1.png"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2021-2022.2] - Phép tính vi p...'),
+                        Text(
+                          '2021-2022.2.TOA1034.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh2.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2021-2022.2] - Chủ nghĩa xa ...'),
+                        Text(
+                          '2021-2022.2.LLCTXH2.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/cam.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2021-2022.2] - Cấu trúc dữ l ...'),
+                        Text(
+                          '2021-2022.2.TIN3084.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh3.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2021-2022.2] - Nguyên lý hệ ...'),
+                        Text(
+                          '2021-2022.2.TIN3042.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: ClipOval(
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/xanh3.jpg"),
+                            fit: BoxFit.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('[2021-2022.2] - Anh văn chu ...'),
+                        Text(
+                          '2021-2022.2.TIN2033.001',
+                          style: TextStyle(fontSize: 12, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      // Xử lý khi người dùng chọn Mục 2
+                      // Đóng Drawer sau khi chọn
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {},
