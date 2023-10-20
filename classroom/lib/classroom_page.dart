@@ -36,7 +36,7 @@ class Myclassroom extends StatelessWidget {
     Color.fromARGB(255, 35, 113, 231),
     Color.fromARGB(255, 216, 35, 207),
     Color.fromARGB(255, 216, 35, 35),
-    Color.fromARGB(255, 231, 41, 41),
+    Color.fromARGB(255, 35, 113, 231),
     Color.fromARGB(255, 238, 218, 43),
     Color.fromARGB(255, 55, 235, 39),
   ];
@@ -229,8 +229,8 @@ class Myclassroom extends StatelessWidget {
           ),
         ],
       ),
-      drawer: new Drawer(
-        child: new ListView(
+      drawer: Drawer(
+        child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             SizedBox(
@@ -250,7 +250,7 @@ class Myclassroom extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         style: TextStyle(fontSize: 22, color: Colors.black),
-                        children: <TextSpan>[
+                        children: const <TextSpan>[
                           TextSpan(
                             text: "G",
                             style: TextStyle(fontSize: 22, color: Colors.blue),

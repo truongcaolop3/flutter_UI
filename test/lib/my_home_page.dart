@@ -97,7 +97,7 @@ class Myhomepage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
           BottomNavigationBarItem(label: "Chat", icon: Icon(Icons.chat)),
           BottomNavigationBarItem(label: "Call", icon: Icon(Icons.call)),
